@@ -1,0 +1,23 @@
+#mainContainer {
+    text-align: center;
+}
+
+#titleContainer {
+    display: inline-block;
+}
+
+#flexContainer {
+    display: flexbox;
+    flex-direction: row;
+    flex-basis: auto;
+    flex-flow: wrap;
+}
+
+.flexItem {
+    display: inline-block;
+}
+
+hr {
+    width: 90%;
+    color: #f7f7f7;
+}

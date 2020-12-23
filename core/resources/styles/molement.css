@@ -1,0 +1,247 @@
+div.x-molement {
+    position: relative;
+    width: 170px;
+    height: 24px;
+    margin-top: 22px;
+}
+div.x-molement,
+div.x-molement * {
+    box-sizing: border-box;
+}
+
+div.x-molement > span.x-molement-base {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid silver;
+    border-radius: 3px;
+    background-color: white;
+    transform-origin: center center;
+    backface-visibility: visible;
+    transform: rotateY(0deg);
+    transition: all 400ms;
+}
+div.x-molement.x-molement.x-molement-active > span.x-molement-base {
+    border-color: #25a8ff;
+    box-shadow: 0 0 2px #25a8ff;
+}
+div.x-molement[data-typename="INPUT_TEXT"][data-setname="FLIP"]:not(.x-molement-hasvalue):not(.x-molement-active) > span.x-molement-base,
+div.x-molement[data-typename="INPUT_PASSWORD"][data-setname="FLIP"]:not(.x-molement-hasvalue):not(.x-molement-active) > span.x-molement-base,
+div.x-molement[data-typename="SINGLE_SELECT"][data-setname="FLIP"]:not(.x-molement-hasvalue):not(.x-molement-active) > span.x-molement-base,
+div.x-molement[data-typename="MULTI_SELECT"][data-setname="FLIP"].x-molement-hasvalue.x-molement-active > span.x-molement-base,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"][data-side="FIRST"] > span.x-molement-base {
+    transform: rotateY(-180deg);
+}
+
+
+div.x-molement input[type="text"],
+div.x-molement input[type="password"] {
+    border: 1px solid silver;
+    border-radius: 3px;
+}
+div.x-molement input[type="text"]:focus,
+div.x-molement input[type="password"]:focus {
+    border-color: cyan;
+}
+
+
+div.x-molement[data-setname="FLIP"] {
+    overflow: visible;
+    perspective: 200px;
+}
+
+div.x-molement[data-setname="FLIP"] > label {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    transition: all 400ms;
+    pointer-events: none;
+}
+div.x-molement[data-setname="FLIP"] > label.x-molement-label,
+div.x-molement[data-setname="FLIP"] > label.x-molement-label-value {
+    color: darkblue;
+}
+div.x-molement[data-setname="FLIP"] > label.x-molement-label-shadow,
+div.x-molement[data-setname="FLIP"] > label.x-molement-label-value-shadow {
+    color: silver;
+}
+div.x-molement[data-setname="FLIP"] > label.x-molement-label-value,
+div.x-molement[data-setname="FLIP"] > label.x-molement-label-value-shadow {
+    padding: 0 5px;
+}
+div.x-molement[data-setname="FLIP"] > label.x-molement-label-value,
+div.x-molement[data-setname="FLIP"] > label.x-molement-label-value-shadow {
+    text-align: left;
+}
+div.x-molement[data-setname="FLIP"] > label.x-molement-label-value-shadow {
+    text-align: right;
+}
+div.x-molement[data-typename="INPUT_TEXT"][data-setname="FLIP"] > label.x-molement-label,
+div.x-molement[data-typename="INPUT_PASSWORD"][data-setname="FLIP"] > label.x-molement-label,
+div.x-molement[data-typename="SINGLE_SELECT"][data-setname="FLIP"] > label.x-molement-label,
+div.x-molement[data-typename="MULTI_SELECT"][data-setname="FLIP"] > label.x-molement-label,
+div.x-molement[data-typename="INPUT_TEXT"][data-setname="FLIP"]:not(.x-molement-hasvalue).x-molement-active > label.x-molement-label-shadow,
+div.x-molement[data-typename="INPUT_PASSWORD"][data-setname="FLIP"]:not(.x-molement-hasvalue).x-molement-active > label.x-molement-label-shadow,
+div.x-molement[data-typename="SINGLE_SELECT"][data-setname="FLIP"]:not(.x-molement-hasvalue).x-molement-active > label.x-molement-label-shadow,
+div.x-molement[data-typename="MULTI_SELECT"][data-setname="FLIP"]:not(.x-molement-hasvalue).x-molement-active > label.x-molement-label-shadow,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"]:not(.x-molement-hasvalue) > label.x-molement-label-value-shadow,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"][data-side="FIRST"].x-molement-hasvalue > label.x-molement-label-value.x-molement-label-value-first,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"][data-side="FIRST"].x-molement-hasvalue > label.x-molement-label-value-shadow.x-molement-label-value-second,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"][data-side="SECOND"].x-molement-hasvalue > label.x-molement-label-value-shadow.x-molement-label-value-first,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"][data-side="SECOND"].x-molement-hasvalue > label.x-molement-label-value.x-molement-label-value-second {
+    transform: rotateY(0deg);
+}
+div.x-molement[data-typename="INPUT_TEXT"][data-setname="FLIP"]:not(.x-molement-hasvalue).x-molement-active > input ~ label.x-molement-label,
+div.x-molement[data-typename="INPUT_PASSWORD"][data-setname="FLIP"]:not(.x-molement-hasvalue).x-molement-active > input ~ label.x-molement-label,
+div.x-molement[data-typename="SINGLE_SELECT"][data-setname="FLIP"]:not(.x-molement-hasvalue).x-molement-active > input ~ label.x-molement-label,
+div.x-molement[data-typename="MULTI_SELECT"][data-setname="FLIP"]:not(.x-molement-hasvalue).x-molement-active > input ~ label.x-molement-label,
+div.x-molement[data-typename="INPUT_TEXT"][data-setname="FLIP"]:not(.x-molement-active) > label.x-molement-label-shadow,
+div.x-molement[data-typename="INPUT_PASSWORD"][data-setname="FLIP"]:not(.x-molement-active) > label.x-molement-label-shadow,
+div.x-molement[data-typename="SINGLE_SELECT"][data-setname="FLIP"]:not(.x-molement-active) > label.x-molement-label-shadow,
+div.x-molement[data-typename="MULTI_SELECT"][data-setname="FLIP"]:not(.x-molement-active) > label.x-molement-label-shadow,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"][data-side="FIRST"] > label.x-molement-label-value-shadow.x-molement-label-value-first,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"][data-side="SECOND"] > label.x-molement-label-value.x-molement-label-value-first,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"][data-side="FIRST"] > label.x-molement-label-value.x-molement-label-value-second,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"][data-side="SECOND"] > label.x-molement-label-value-shadow.x-molement-label-value-second {
+    transform: rotateY(-180deg);
+}
+div.x-molement[data-typename="INPUT_TEXT"][data-setname="FLIP"].x-molement-hasvalue > label.x-molement-label,
+div.x-molement[data-typename="INPUT_PASSWORD"][data-setname="FLIP"].x-molement-hasvalue > label.x-molement-label,
+div.x-molement[data-typename="SINGLE_SELECT"][data-setname="FLIP"].x-molement-hasvalue:not(.x-molement-active) > label.x-molement-label,
+div.x-molement[data-typename="MULTI_SELECT"][data-setname="FLIP"].x-molement-hasvalue > label.x-molement-label,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"].x-molement-active > label.x-molement-label,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"].x-molement-hasvalue > label.x-molement-label {
+    transform: translateY(-100%) scale(.7) rotateY(0deg);
+    pointer-events: all;
+}
+div.x-molement[data-typename="INPUT_TEXT"][data-setname="FLIP"].x-molement-hasvalue > label.x-molement-label-shadow,
+div.x-molement[data-typename="INPUT_PASSWORD"][data-setname="FLIP"].x-molement-hasvalue > label.x-molement-label-shadow,
+div.x-molement[data-typename="SINGLE_SELECT"][data-setname="FLIP"].x-molement-hasvalue:not(.x-molement-active) > label.x-molement-label-shadow,
+div.x-molement[data-typename="MULTI_SELECT"][data-setname="FLIP"].x-molement-hasvalue:not(.x-molement-active) > label.x-molement-label-shadow,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"]:not(.x-molement-hasvalue) > label.x-molement-label-value,
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"]:not(.x-molement-hasvalue) > label.x-molement-label-value-shadow {
+    color: transparent;
+    user-select: none;
+}
+
+div.x-molement[data-setname="FLIP"] > input {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    padding: 2px 5px;
+    color: darkblue;
+    text-align: left;
+    transform-origin: center center;
+    backface-visibility: visible;
+    transform: rotateY(0deg);
+    transition: all 400ms;
+}
+div.x-molement[data-typename="SINGLE_SELECT"][data-setname="FLIP"] > input,
+div.x-molement[data-typename="MULTI_SELECT"][data-setname="FLIP"] > input {
+    user-select: none;
+    text-align: center;
+}
+div.x-molement[data-typename="INPUT_TEXT"][data-setname="FLIP"]:not(.x-molement-hasvalue):not(.x-molement-active) > input,
+div.x-molement[data-typename="INPUT_PASSWORD"][data-setname="FLIP"]:not(.x-molement-hasvalue):not(.x-molement-active) > input,
+div.x-molement[data-typename="SINGLE_SELECT"][data-setname="FLIP"]:not(.x-molement-hasvalue):not(.x-molement-active) > input,
+div.x-molement[data-typename="MULTI_SELECT"][data-setname="FLIP"].x-molement-hasvalue.x-molement-active > input {
+    transform: rotateY(-180deg);
+}
+div.x-molement[data-typename="SINGLE_SELECT"][data-setname="FLIP"].x-molement-hasvalue.x-molement-active > input,
+div.x-molement[data-typename="MULTI_SELECT"][data-setname="FLIP"].x-molement-hasvalue.x-molement-active > input {
+    color: transparent;
+    user-select: none;
+}
+div.x-molement[data-typename="RADIO"][data-setname="FLIP"] > input {
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+
+.x-molement-droplist {
+    display: inline-block;
+    position: fixed;
+    max-height: 120px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0;
+    box-shadow: 0 0 2px silver;
+    z-index: 999;
+    transition: all 200ms;
+    --pointer-events: none;
+}
+.x-molement-droplist.x-molement-expanded {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.x-molement-droplist-item {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 22px;
+    padding: 2px 5px;
+    background-color: white;
+    color: darkblue;
+    border-bottom: 1px solid #eee;
+    --box-shadow: 0 0 2px silver;
+    cursor: pointer;
+    transform: translateX(35%);
+    opacity: 0;
+    transition: all 400ms;
+}
+.x-molement-droplist-item.x-molement-shownup {
+    transform: translateX(0);
+    opacity: 1;
+}
+.x-molement-droplist-item.x-molement-selected {
+    padding-left: 15px;
+    color: #25a8ff;
+}
+.x-molement-droplist-item:hover {
+    padding-left: 15px;
+    color: #25a8ff;
+    background-color: yellow;
+}
+
+.x-molement-droplist-item > * {
+    pointer-events: none;
+}
+
+.x-molement-droplist-item input[type="checkbox"] {
+    display: none;
+}
+
+.x-molement-droplist-item input[type="checkbox"] ~ span.x-molement-droplist-item-check {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border: 5px solid #e7e7e7;
+    margin-right: 4px;
+    vertical-align: middle;
+    transition: all 200ms;
+}
+.x-molement-droplist-item input[type="checkbox"]:checked ~ span.x-molement-droplist-item-check {
+    width: 10px;
+    height: 10px;
+    background-color: #25a8ff;
+    border-width: 0;
+}
